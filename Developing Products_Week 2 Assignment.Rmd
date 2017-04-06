@@ -1,0 +1,21 @@
+---
+title: "Week 2 Assignment"
+author: "Ryan Wood"
+date: "April 5, 2017"
+output: html_document
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##This is my favorite vacation resort in Panama  The best part of the beach is shown in the rectangle.  It features the abandoned villa of the country's former dictator.
+
+```{r}
+library(leaflet)
+my_map <- leaflet() %>% addTiles() 
+my_map <- my_map %>% addMarkers(lat=8.3651, lng= -80.1263, popup="My Favorite Vacation Resort")
+my_map <- my_map %>% addRectangles(lat1 = 8.3661, lng1 = -80.1163, lat2 = 8.362, lng2 = -80.1263)
+my_map
+```
